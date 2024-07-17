@@ -1,11 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
-from .constants import *
+from .constants import ACCOUNT_TYPE, GENDER
 
 
 # Create your models here.
 class UserBankAccount(models.Model):
-    user = models.OneToOneField(User, related_name='Account', on_delete=models.CASCADE)
+    user = models.OneToOneField(User, related_name="Account", on_delete=models.CASCADE)
     type = models.CharField(max_length=50, choices=ACCOUNT_TYPE)
     account_no = models.IntegerField(unique=True)
     birth_date = models.DateField()
@@ -15,7 +15,7 @@ class UserBankAccount(models.Model):
 
 
 class UserAddress(models.Model):
-    user = models.OneToOneField(User, related_name='Address', on_delete=models.CASCADE)
+    user = models.OneToOneField(User, related_name="Address", on_delete=models.CASCADE)
     street = models.TextField()
     city = models.CharField(max_length=50)
     postal_code = models.IntegerField()
