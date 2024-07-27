@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block style %}
+
+{% endblock %}
+{% block body %}
+  {% if user.is_authenticated %}
+    <h5 class="text-center">Welcome {{ user }}</h5>
+  {% endif %}
+{% endblock %}
+{% block script %}
+
+{% endblock %}
